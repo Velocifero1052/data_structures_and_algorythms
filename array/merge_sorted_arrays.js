@@ -1,3 +1,5 @@
+
+//last element is missing, need to be fixed and simplified
 function mergeSortedArraysMySolution(arr1, arr2) {
 
     if(arr1.length === 0 && arr2.length !== 0) {
@@ -52,8 +54,7 @@ function mergeSortedArray(array1, array2) {
 
 
   while (array1Item || array2Item) {
-    console.log(array1Item, array2Item);
-    if (array1Item < array2Item) {
+    if (!array2Item || array1Item < array2Item) {
       mergedArray.push(array1Item)
       array1Item = array1[i];
       i++;
@@ -75,3 +76,4 @@ console.log(mergeSortedArraysMySolution(firstSortedArray, secondSortedArray));
 
 console.log(mergeSortedArraysMySolution( secondSortedArray, firstSortedArray));
 
+console.log(mergeSortedArray(firstSortedArray, secondSortedArray));
